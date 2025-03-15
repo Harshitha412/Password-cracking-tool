@@ -29,11 +29,11 @@ def crack_password(hash_value: str, salt: str, length: int, thread_count: int = 
             if generate_hash(candidate_pw, salt) == hash_value:
                 time_taken = time.time() - start_time
 
-                print("\n🔑 Generated Hash Value:", hash_value)
-                print("🧂 Salt Used:", salt)
-                print("✅ Cracked Password:", candidate_pw)
-                print(f"⏳ Time Taken: {time_taken:.2f} seconds")
-                print(f"🔢 Total Attempts: {attempts[0]}")
+                print("\n Generated Hash Value:", hash_value)
+                print(" Salt Used:", salt)
+                print(" Cracked Password:", candidate_pw)
+                print(f" Time Taken: {time_taken:.2f} seconds")
+                print(f" Total Attempts: {attempts[0]}")
                 os._exit(0)  # Force exit once found
 
             attempts[0] += 1
@@ -49,7 +49,7 @@ def crack_password(hash_value: str, salt: str, length: int, thread_count: int = 
     for t in threads:
         t.join()
 
-    print("❌ Password not found")
+    print(" Password not found")
 
 if __name__ == "__main__":
     # Define a password and generate a salt
